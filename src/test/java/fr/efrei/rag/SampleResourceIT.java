@@ -1,4 +1,4 @@
-package fr.efrei.rag.web.rest;
+package fr.efrei.rag;
 
 import net.filecode.rag.RagApplication;
 import org.junit.jupiter.api.Test;

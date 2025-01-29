@@ -4,6 +4,5 @@ public class Sample {
 
     private String value;
 
-    public Sample
 
 }
