@@ -7,14 +7,14 @@ import org.testng.internal.reflect.InjectableParameter;
 
 @RestController
 public class AssistantResource {
-    private final AssistantAiService assistantAiService;
-
-    AssistantResource(AssistantAiService assistantAiService){
-        this.assistantAiService = assistantAiService;
+    private final Logger log = LoggerFactory.getLogger(AssistantResource.class);
+    private final AssistanceAiService assistanceAiService;
+    public AssistantResource(AssistanceAiService assistanceAiService) {
+        this.assistanceAiService = assistanceAiService;
     }
-
-    @PostMapping("/assistants/chat")
-    public String chat(@RequestBody String query){
-        return assistantService.chat(query);
+    @PostMapping("/assistant/chat")
+    public String chat(@RequestBody String query) {
+        log.info("REST request to chat with assistant : {}", query);
+        return assistanceAiService.chat(query);
     }
 }
